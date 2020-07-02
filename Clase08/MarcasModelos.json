@@ -1,0 +1,75 @@
+{
+  "marcas": [
+    "Ford",
+    "Renault",
+    "Fiat",
+    "Chevrolet",
+    "Citroen",
+    "Volkswagen",
+    "Peugeot"
+  ],
+  "modelos": [
+    [
+      "Ranger",
+      "Falcon",
+      "Fiesta",
+      "Kuga",
+      "Focus",
+      "K"
+    ],
+    [
+      "Kwid",
+      "Duster",
+      "4",
+      "12",
+      "Captur",
+      "Scenic"
+    ],
+    [
+      "500",
+      "500 X",
+      "Mobi",
+      "Uno",
+      "Cronos",
+      "Argo",
+      "Toro",
+      "600"
+    ],
+    [
+      "Onix",
+      "Camaro",
+      "Cruze",
+      "Tracker",
+      "Spin",
+      "Joy",
+      "Equinox"
+    ],
+    [
+      "3CV",
+      "Berlingo",
+      "C3",
+      "C3 Aircross",
+      "C4",
+      "DS 7 Crossback"
+    ],
+    [
+      "Golf",
+      "Passat",
+      "T-cross",
+      "Up",
+      "Vento",
+      "Gol",
+      "Suran"
+    ],
+    [
+      "308",
+      "208",
+      "3008",
+      "504",
+      "408",
+      "Partner",
+      "2008",
+      "5008"
+    ]
+  ]
+}

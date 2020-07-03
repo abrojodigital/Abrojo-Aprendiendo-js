@@ -28,7 +28,7 @@ const validarEsAuto = async (ruta) => {
       throw new Error("Al auto le falta Tipo de Seguro.")
     } else if (!auto.hasOwnProperty("valor")) {
       throw new Error("Al auto le falta Valor.")
-    } else if (!auto.hasOwnProperty("valor")) {
+    } else if (!auto.hasOwnProperty("año")) {
       throw new Error("Al auto le falta Año.")
     } else {
         procesarAuto(auto)

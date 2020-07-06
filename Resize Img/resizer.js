@@ -1,6 +1,6 @@
 const fs = require("fs").promises;
 const path = require("path");
-const shape = require("shape");
+const sharp = require("sharp");
 
 const resizeImg = await (ruta) => {
   // acá tengo que ver la libreria

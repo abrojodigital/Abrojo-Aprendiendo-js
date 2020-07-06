@@ -1,12 +1,10 @@
 const fs = require("fs").promises;
 const path = require("path");
+const shape = require("shape");
 
-const totales = {
-  totalValorAutos: 0,
-  totalSeguros: 0,
-  cantAutosProcesados: 0,
-};
-
+const resizeImg = await (ruta) => {
+  // acá tengo que ver la libreria
+}
 const recorrerDirectorio = async (rutaDir) => {
   const rutas = await fs.readdir(rutaDir);
   for (let index = 0; index < rutas.length; index++) {
@@ -22,7 +20,7 @@ const procesarRuta = async (ruta) => {
   if (stats.isDirectory()) {
     return recorrerDirectorio(ruta);
   } else if (stats.isFile()) {
-    return validarEsAuto(ruta);
+    return resizeImg(ruta);
   }
 };
 

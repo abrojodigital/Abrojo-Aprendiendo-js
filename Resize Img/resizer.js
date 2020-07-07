@@ -34,7 +34,7 @@ const procesarRuta = async (ruta) => {
     process.stdout.cursorTo(0)
     console.log(ordenesPathAbsoluto)
   } catch (error) {
-    process.stdout.cursorTo(0);
+    process.stdout.cursorTo(0)
     console.log(`ERROR: ${error.message}`)
   }
 })();

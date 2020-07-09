@@ -15,8 +15,7 @@ const thumbImage = async (ruta) => {
      .resize(imgWidth)
      .toFile(thumbPath)
    } catch (error) {
-     const msg = chalk.dim(`(${error.message})`)
-     console.warn(`El '${chalk.bold(archivo)}' thumbnail no se generó. ${msg}`)
+     console.warn(`El archivo '${archivo}' thumbnail no se generó. ${error.message}`)
    }
 }
 
@@ -47,7 +46,6 @@ const procesarRuta = async (ruta) => {
       : path.join(process.cwd(), imgsPath)
     await procesarRuta(imgsPathAbsoluto)
     process.stdout.cursorTo(0)
-    // console.log(imgsPathAbsoluto)
   } catch (error) {
     process.stdout.cursorTo(0)
     console.log(`ERROR: ${error.message}`)

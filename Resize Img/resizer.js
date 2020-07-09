@@ -1,27 +1,31 @@
-const fs = require("fs").promises;
-const path = require("path");
+const fs = require('fs').promises
+const path = require('path')
 const sharp = require('sharp')
 
-const resizeImg = async (ruta) => {
-  // acá tengo que ver la libreria
+const resizeImg = (ruta) => {
+  console.log(ruta)
 }
-
+/*
+async sharp(ruta)
+  .resize({width: 200, height: 100})
+  .toFile('./output/archivo.jpg')
+*/
 const recorrerDirectorio = async (rutaDir) => {
-  const rutas = await fs.readdir(rutaDir);
+  const rutas = await fs.readdir(rutaDir)
   for (let index = 0; index < rutas.length; index++) {
-    const rutaAbsoluta = path.join(rutaDir, rutas[index]);
+    const rutaAbsoluta = path.join(rutaDir, rutas[index])
     try {
-      await procesarRuta(rutaAbsoluta);
+      await procesarRuta(rutaAbsoluta)
     } catch (_) {}
   }
 };
 
 const procesarRuta = async (ruta) => {
-  const stats = await fs.stat(ruta);
+  const stats = await fs.stat(ruta)
   if (stats.isDirectory()) {
-    return recorrerDirectorio(ruta);
+    return recorrerDirectorio(ruta)
   } else if (stats.isFile()) {
-    return await resizeImg(ruta);
+    return await resizeImg(ruta)
   }
 };
 
@@ -31,7 +35,7 @@ const procesarRuta = async (ruta) => {
     const imgsPathAbsoluto = path.isAbsolute(imgsPath)
       ? imgsPath
       : path.join(process.cwd(), imgsPath)
-    await procesarPath(imgsPathAbsoluto)
+    await procesarRuta(imgsPathAbsoluto)
     process.stdout.cursorTo(0)
     // console.log(imgsPathAbsoluto)
   } catch (error) {

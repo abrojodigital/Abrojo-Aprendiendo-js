@@ -1,5 +1,5 @@
 # Logs
-l.DS_Store
+.DS_Store
 node_modules
 .vscode/*
 !.vscode/settings.json

@@ -1,15 +1,25 @@
 const fs = require('fs').promises
 const path = require('path')
 const sharp = require('sharp')
+const pathThumb = path.join(__dirname, 'output')
+const imgWidth = 200
 
-const resizeImg = (ruta) => {
-  console.log(ruta)
+let x = 0
+
+const thumbImage = async (ruta) => {
+  x ++
+  const archivo = x.toString()
+  const thumbPath = path.join(pathThumb, `${archivo}.thumb.jpg`)
+  try {
+     await sharp(ruta)
+     .resize(imgWidth)
+     .toFile(thumbPath)
+   } catch (error) {
+     const msg = chalk.dim(`(${error.message})`)
+     console.warn(`El '${chalk.bold(archivo)}' thumbnail no se generó. ${msg}`)
+   }
 }
-/*
-async sharp(ruta)
-  .resize({width: 200, height: 100})
-  .toFile('./output/archivo.jpg')
-*/
+
 const recorrerDirectorio = async (rutaDir) => {
   const rutas = await fs.readdir(rutaDir)
   for (let index = 0; index < rutas.length; index++) {
@@ -25,9 +35,9 @@ const procesarRuta = async (ruta) => {
   if (stats.isDirectory()) {
     return recorrerDirectorio(ruta)
   } else if (stats.isFile()) {
-    return await resizeImg(ruta)
+    return await thumbImage(ruta)
   }
-};
+}
 
 (async (_) => {
   try {

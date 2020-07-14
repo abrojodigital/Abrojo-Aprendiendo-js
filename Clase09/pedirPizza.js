@@ -17,7 +17,7 @@ let preguntas = [
     name: 'telefono',
     message: "Cual es su número de teléfono?",
     validate: (numero) => {
-      var pass = numero.match(
+      inquirer      let pass = numero.match(
         /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
       );
       if (pass) {

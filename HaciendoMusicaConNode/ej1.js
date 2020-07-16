@@ -1,8 +1,8 @@
 const scribble = require('scribbletune')
 
 let perc = scribble.clip({
-  notes: ['c2'],
-  pattern: 'x-x-x--x'
+  note: ['c3'],
+  pattern: 'x--xx-x--x-x--x'
 })
 
 scribble.midi(perc)

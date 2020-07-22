@@ -46,7 +46,7 @@ const procesarRuta = async (ruta) => {
   }
 }
 
-const procesarAuto =ers (auto) => {
+const procesarAuto = (auto) => {
   totales.totalSeguros += calcularSeguro(auto)
   totales.cantAutosProcesados++
   totales.totalValorAutos += auto.valor

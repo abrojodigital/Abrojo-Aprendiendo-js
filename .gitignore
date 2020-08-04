@@ -6,6 +6,7 @@ node_modules
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+./Clase012/config.telegram.js
 .history/
 package-lock.json
 package.json

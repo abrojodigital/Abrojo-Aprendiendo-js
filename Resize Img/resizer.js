@@ -2,7 +2,7 @@ const fs = require('fs').promises
 const path = require('path')
 const sharp = require('sharp')
 const pathThumb = path.join(__dirname, 'output')
-const imgWidth = 200
+const imgWidth = 768
 
 let x = 0
 
